@@ -15,7 +15,7 @@ pipeline {
                     sh 'docker build -t svm-service:latest .'
 
                     // Run the Docker container
-                    sh 'docker run  -p 5001:5001 svm-service'
+                    sh 'docker run  -p 5002:5002 svm-service'
                 }
             }
         }
