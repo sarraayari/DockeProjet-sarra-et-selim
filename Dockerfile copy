@@ -1,0 +1,13 @@
+FROM python:3.10.12
+
+WORKDIR /app
+
+COPY requirements.txt .
+COPY SVM-service.py .
+COPY OurModel.pkl .
+
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
+RUN pip install flask  # Ensure Flask is installed
+
+CMD ["python", "SVM-service"]

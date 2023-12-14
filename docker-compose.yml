@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  svm-service:
+    build:
+      context: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./OurModel.pkl:/app/OurModel.pkl
+    environment:
+      - FLASK_APP=SVM-service.py
+      - FLASK_ENV=development
+    command: ["python", "SVM-service.py"]
