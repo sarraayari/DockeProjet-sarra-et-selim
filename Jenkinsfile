@@ -12,10 +12,10 @@ pipeline {
                 script {
                     // Build and tag the Docker image
 
-                    sh 'sudo docker build -t svm-service:latest .'
+                    sh 'docker build -t svm-service:latest .'
 
                     // Run the Docker container
-                    sh 'sudo docker run  -p 5000:5000 svm-service'
+                    sh 'docker run  -p 5000:5000 svm-service'
                 }
             }
         }
